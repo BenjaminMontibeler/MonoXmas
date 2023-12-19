@@ -8,6 +8,11 @@ import {
   SPEED,
   DIRECTIONS
 } from "./constants";
+import "./css/style.css";
+import GameOverModal from "./GameOverModal";
+import '@fortawesome/fontawesome-free/css/all.css';
+
+
 
 const App = () => {
   const canvasRef = useRef();
@@ -17,6 +22,7 @@ const App = () => {
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const [currentDirection, setCurrentDirection] = useState(38);
 
   useInterval(() => gameLoop(), speed);
 
@@ -25,8 +31,33 @@ const App = () => {
     setGameOver(true);
   };
 
-  const moveSnake = ({ keyCode }) =>
+  const moveSnake = ({ keyCode }) => {
+    if(!(keyCode >= 37 && keyCode <= 40)) {
+      return;
+    }
+    if(currentDirection === 37 ) {
+      if(keyCode === currentDirection+2) {
+        return; 
+      } 
+    }
+    if(currentDirection === 38 ) {
+      if(keyCode === currentDirection+2) {
+        return; 
+      } 
+    }
+    if(currentDirection === 39) {
+      if(keyCode === currentDirection-2) {
+        return;
+      } 
+    }
+    if(currentDirection === 40) {
+      if(keyCode === currentDirection-2) {
+        return;
+      } 
+    }
+    setCurrentDirection(keyCode);
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
+  }
 
   const createApple = () =>
     apple.map((_a, i) => Math.floor(Math.random() * (CANVAS_SIZE[i] / SCALE)));
@@ -83,6 +114,7 @@ const App = () => {
     setSpeed(SPEED);
     setGameOver(false);
     setScore(0);
+    canvasRef.current.focus();
   };
 
   useEffect(() => {
@@ -108,15 +140,38 @@ const App = () => {
   }, [snake, apple, gameOver]);
 
   return (
-    <div role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}>
+    <div role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}
+    style={{
+      display: "flex",
+      flexDirection: "column", 
+      alignItems: "center", 
+      justifyContent: "center",
+    }}>
+      <h1 style={{ color: '#ffffff' }}>Mono Xmas</h1>
       <canvas
-        style={{ border: "1px solid black" }}
+        className="container"
         ref={canvasRef}
         width={`${CANVAS_SIZE[0]}px`}
         height={`${CANVAS_SIZE[1]}px`}
+        tabIndex="0"
+        style={{ outline: 'none' }}
       />
+      <div className="c-btn">
+        <button className="btn btn--up" onClick={() => moveSnake({ keyCode: 38 })}>
+          <i className="fa fa-arrow-up"></i>
+        </button>
+        <button className="btn btn--right" onClick={() => moveSnake({ keyCode: 39 })}>
+          <i className="fa fa-arrow-right"></i>
+        </button>
+        <button className="btn btn--down" onClick={() => moveSnake({ keyCode: 40 })}>
+          <i className="fa fa-arrow-down"></i>
+        </button>
+        <button className="btn btn--left" onClick={() => moveSnake({ keyCode: 37 })}>
+        <i className="fa fa-arrow-left"></i>
+        </button>
+      </div>
       <div>Score: {score}</div>
-      {gameOver && <div>GAME OVER!</div>}
+      {gameOver && <GameOverModal score={score} startGame={startGame} />}
       <button onClick={startGame}>Start Game</button>
     </div>
   );
