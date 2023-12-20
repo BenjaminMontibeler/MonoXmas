@@ -10,7 +10,7 @@ const GameOverModal = ({ score, startGame }) => {
         <p>Your Score: {score}</p>
         <div className="modal--footer">
           <button className="btn--primary btn--modal" onClick={startGame}>Play Again</button>
-          <button className="btn--primary btn--modal" onClick={startGame}>Home page</button>
+          <button className="btn--primary btn--modal" onClick={startGame}>Home Page</button>
         </div>
       </div>
     </div>
