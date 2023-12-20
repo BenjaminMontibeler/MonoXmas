@@ -10,9 +10,9 @@ import {
 } from "./constants";
 import "./css/style.css";
 import GameOverModal from "./GameOverModal";
+import ReactDOM from 'react-dom'
+import Snowfall from 'react-snowfall'
 // import '@fortawesome/fontawesome-free/css/all.css';
-
-
 
 const App = () => {
   const canvasRef = useRef();
@@ -142,6 +142,7 @@ const App = () => {
   return (
     <div className="container" role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}>
       <h1 style={{ color: '#ffffff' }}>Mono Christmas game</h1>
+      <Snowfall snowflakeCount={100} />
       <canvas
         className="game-canvas"
         ref={canvasRef}
