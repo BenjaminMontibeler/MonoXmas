@@ -5,8 +5,8 @@ body {
     Arial, sans-serif;
   transition: all 0.25s cubic-bezier(0.65, 0, 0.17, 0.98);
   background-color: #1e2633;
-  background-image: url('/icons/tree.svg');
-  background-size: 9%;
+  background-image: url("/icons/tree.svg");
+  background-size: 150px;
   background-position: center;
   background-repeat: repeat;
   overflow: hidden;
@@ -42,10 +42,10 @@ h2 {
 }
 
 @media (max-width: 1024px) {
-	.game-canvas {
-		width: 76vw;
-		height: 76vw;
-	}
+  .game-canvas {
+    width: 76vw;
+    height: 76vw;
+  }
 }
 
 .modal {
@@ -75,14 +75,17 @@ h2 {
 }
 
 .modal--footer {
-	display: flex;
-	flex-direction: row;
-	gap: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 .score {
-	font-size: 18px;
-	color: #fff;
+  background-color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
 }
 
 .c-btn {
@@ -146,7 +149,7 @@ h2 {
   grid-row: 2;
 }
 
-.btn--primary {
+/* .btn--primary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,11 +159,11 @@ h2 {
   color: #fff;
   font-size: 18px;
   padding: 10px 20px;
-}
+} */
 
 .btn--modal {
-	font-size: 16px;
-	width: 50%;
+  font-size: 16px;
+  width: 50%;
   height: 3rem;
 }
 
@@ -205,6 +208,11 @@ p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px;
   font-size: 1em;
+}
+
+.actions--wrapper {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }

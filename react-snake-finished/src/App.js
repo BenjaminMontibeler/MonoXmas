@@ -12,6 +12,7 @@ import "./css/style.css";
 import GameOverModal from "./GameOverModal";
 import ReactDOM from 'react-dom'
 import Snowfall from 'react-snowfall'
+import useAnimationFrame from './useAnimationFrame';
 // import '@fortawesome/fontawesome-free/css/all.css';
 
 const App = () => {
@@ -101,6 +102,7 @@ const App = () => {
         newApple = createApple();
       }
       setApple(newApple);
+      setSpeed(prevSpeed => Math.max(150, prevSpeed - 2));
     } else {
       snakeCopy.pop();
     }
@@ -141,7 +143,7 @@ const App = () => {
 
   return (
     <div className="container" role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}>
-      <h1 style={{ color: '#ffffff' }}>Mono Christmas game</h1>
+      <h1 style={{ color: '#ffffff' }}>Merry Christmas</h1>
       <Snowfall snowflakeCount={100} />
       <canvas
         className="game-canvas"
@@ -165,9 +167,11 @@ const App = () => {
         <i className="fa fa-arrow-left"></i>
         </button>
       </div>
-      <span className="score">Score: {score}</span>
-      {gameOver && <GameOverModal score={score} startGame={startGame} />}
-      <button className="btn--primary" onClick={startGame}>Start Game</button>
+      <div className="actions--wrapper">
+        <button className="score">Score: {score}</button>
+        {gameOver && <GameOverModal score={score} startGame={startGame} />}
+        <button className="btn--primary" onClick={startGame}>Start Game</button>
+      </div>
     </div>
   );
 };
