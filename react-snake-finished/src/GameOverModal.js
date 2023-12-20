@@ -8,8 +8,7 @@ const GameOverModal = ({ score, startGame }) => {
       <div className="modal-content">
         <h2>GAME OVER</h2>
         <p>Your Score: {score}</p>
-        <p>PLAY AGAIN</p>
-        <button onClick={startGame}>Play Again</button>
+        <button className="btn--primary" onClick={startGame}>Play Again</button>
       </div>
     </div>
   );

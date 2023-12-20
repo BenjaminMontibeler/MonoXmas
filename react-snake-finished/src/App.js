@@ -10,7 +10,7 @@ import {
 } from "./constants";
 import "./css/style.css";
 import GameOverModal from "./GameOverModal";
-import '@fortawesome/fontawesome-free/css/all.css';
+// import '@fortawesome/fontawesome-free/css/all.css';
 
 
 
@@ -140,16 +140,10 @@ const App = () => {
   }, [snake, apple, gameOver]);
 
   return (
-    <div role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}
-    style={{
-      display: "flex",
-      flexDirection: "column", 
-      alignItems: "center", 
-      justifyContent: "center",
-    }}>
-      <h1 style={{ color: '#ffffff' }}>Mono Xmas</h1>
+    <div className="container" role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}>
+      <h1 style={{ color: '#ffffff' }}>Mono Christmas game</h1>
       <canvas
-        className="container"
+        className="game-canvas"
         ref={canvasRef}
         width={`${CANVAS_SIZE[0]}px`}
         height={`${CANVAS_SIZE[1]}px`}
@@ -170,9 +164,9 @@ const App = () => {
         <i className="fa fa-arrow-left"></i>
         </button>
       </div>
-      <div>Score: {score}</div>
+      <span className="score">Score: {score}</span>
       {gameOver && <GameOverModal score={score} startGame={startGame} />}
-      <button onClick={startGame}>Start Game</button>
+      <button className="btn--primary" onClick={startGame}>Start Game</button>
     </div>
   );
 };
