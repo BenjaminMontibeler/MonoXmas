@@ -158,7 +158,7 @@ const App = () => {
   return (
     <div className="container" role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}>
       <h1 style={{ color: '#ffffff' }}>Merry Christmas</h1>
-      <Snowfall snowflakeCount={100} />
+      <Snowfall snowflakeCount={100} className="canvas--snow" />
       <canvas
         className="game-canvas"
         ref={canvasRef}
