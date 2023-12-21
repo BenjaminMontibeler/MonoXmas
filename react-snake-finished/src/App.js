@@ -155,16 +155,16 @@ const App = () => {
       />
       <div className="c-btn">
         <button className="btn btn--up" onClick={() => moveSnake({ keyCode: 38 })}>
-          <i className="fa fa-arrow-up"></i>
+          <i className="arrow arrow-up"></i>
         </button>
         <button className="btn btn--right" onClick={() => moveSnake({ keyCode: 39 })}>
-          <i className="fa fa-arrow-right"></i>
+          <i className="arrow arrow-right"></i>
         </button>
         <button className="btn btn--down" onClick={() => moveSnake({ keyCode: 40 })}>
-          <i className="fa fa-arrow-down"></i>
+          <i className="arrow arrow-down"></i>
         </button>
         <button className="btn btn--left" onClick={() => moveSnake({ keyCode: 37 })}>
-        <i className="fa fa-arrow-left"></i>
+        <i className="arrow arrow-left"></i>
         </button>
       </div>
       <div className="actions--wrapper">

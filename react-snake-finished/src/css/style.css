@@ -216,3 +216,26 @@ p {
   align-items: center;
   gap: 25px;
 }
+
+.arrow {
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 60%;
+    height: 60%;
+}
+
+.arrow-up {
+	background-image: url('/icons/arrow-up.svg');
+}
+
+.arrow-down {
+	background-image: url('/icons/arrow-down.svg');
+}
+
+.arrow-right {
+	background-image: url('/icons/arrow-right.svg');
+}
+
+.arrow-left {
+	background-image: url('/icons/arrow-left.svg');
+}
