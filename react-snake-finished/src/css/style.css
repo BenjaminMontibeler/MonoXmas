@@ -26,6 +26,10 @@ h2 {
 
 .game-canvas {
   background-color: rgba(173, 216, 230, 0.9);
+  background-image: url("/icons/mono.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 200px;
   display: flex;
   width: 29vw;
   height: 29vw;
