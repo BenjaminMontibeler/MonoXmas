@@ -90,10 +90,18 @@ const App = () => {
     return false;
   };
 
+  const [rotationAngle, setRotationAngle] = useState(0);
+
   const gameLoop = () => {
     const snakeCopy = JSON.parse(JSON.stringify(snake));
     const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
     snakeCopy.unshift(newSnakeHead);
+
+    const newRotationAngle =
+    dir[0] === 1 ? 90 : dir[0] === -1 ? -90 : dir[1] === 1 ? 180 : 0;
+
+    setRotationAngle(newRotationAngle);
+
     if (checkCollision(newSnakeHead)) endGame();
     if (checkAppleCollision(snakeCopy)) {
       setScore(prevScore => prevScore + 1);
@@ -109,6 +117,7 @@ const App = () => {
     setSnake(snakeCopy);
   };
 
+
   const startGame = () => {
     setSnake(SNAKE_START);
     setApple(APPLE_START);
@@ -123,27 +132,29 @@ const App = () => {
   useEffect(() => {
     const context = canvasRef.current.getContext("2d");
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
-    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    // Draw snake head
-    const [headX, headY] = snake[0];
-    const headImg = new Image();
-    headImg.src = "/icons/sleigh.svg";
-    context.drawImage(headImg, headX, headY, 1, 1);
-
+    context.clearRect(0, 0, CANVAS_SIZE[0], CANVAS_SIZE[1]);
+  
     // Draw snake body
     const bodyImg = new Image();
     bodyImg.src = "/icons/gift.svg";
     snake.slice(1).forEach(([x, y]) => context.drawImage(bodyImg, x, y, 1, 1));
-
+  
     // Draw apple
     const [appleX, appleY] = apple;
     const appleImg = new Image();
     appleImg.src = "/icons/gift.svg";
     context.drawImage(appleImg, appleX, appleY, 1, 1);
-  }, [snake, apple, gameOver]);
-
-
   
+    // Draw snake head with rotation
+    const [headX, headY] = snake[0];
+    const headImg = new Image();
+    headImg.src = "/icons/sleigh.svg";
+    context.save(); // Save the current transformation state
+    context.translate(headX + 0.5, headY + 0.5); // Translate to the center of the head
+    context.rotate((rotationAngle * Math.PI) / 180); // Apply rotation
+    context.drawImage(headImg, -0.5, -0.5, 1, 1); // Draw the rotated head
+    context.restore(); // Restore the original transformation state
+  }, [snake, apple, gameOver, rotationAngle]);
 
   return (
     <div className="container" role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}>
