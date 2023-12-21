@@ -183,9 +183,9 @@ const App = () => {
         </button>
       </div>
       <div className="actions--wrapper">
-        <button className="score">Score: {score}</button>
+        <button className="m-btn btn--outline score">Score: {score}</button>
         {gameOver && <GameOverModal score={score} startGame={startGame} />}
-        <button className="btn--primary" onClick={startGame}>Start Game</button>
+        <button className="m-btn btn--primary" onClick={startGame}>Start Game</button>
       </div>
     </div>
   );

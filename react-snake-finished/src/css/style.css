@@ -128,12 +128,6 @@ h2 {
     Arial, sans-serif;
 }
 
-.modal--footer {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-}
-
 .score {
   background-color: #fff;
   padding: 10px 20px;
@@ -227,12 +221,6 @@ h1 {
   padding: 10px 20px;
 } */
 
-.btn--modal {
-  font-size: 16px;
-  width: 50%;
-  height: 3rem;
-}
-
 .modal {
   position: fixed;
   top: 0;
@@ -253,6 +241,17 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+
+.modal--footer,
+.actions--wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.actions--wrapper button {
+  width: 150px;
+}
+
 h2 {
   color: #cc314d;
 }
@@ -265,22 +264,31 @@ p {
 
 .modal--footer {
   margin-top: 20px;
+  width: 90%;
+}
+
+.m-btn {
+  padding: 15px 20px;
+  border-radius: 5px;
+  width: 50%;
 }
 
 .btn--primary {
   background-color: #cc314d;
   color: #fff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  font-weight: 500;
 }
 
-.actions--wrapper {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+.btn--outline {
+  background-color: #fff;
+  border: 2px solid #cc314d;
+  color: #cc314d;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
 }
 
 .arrow {
