@@ -127,7 +127,7 @@ const App = () => {
     // Draw snake head
     const [headX, headY] = snake[0];
     const headImg = new Image();
-    headImg.src = "/icons/santaClaus.png";
+    headImg.src = "/icons/sleigh.svg";
     context.drawImage(headImg, headX, headY, 1, 1);
 
     // Draw snake body
