@@ -44,11 +44,23 @@ h2 {
     20;
 }
 
-
 @media (max-width: 580px) {
   .game-canvas {
     width: 75vw;
     height: 75vw;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 930px) {
+  .game-canvas {
+    border: 10px solid green;
+    border-image: repeating-linear-gradient(
+      45deg,
+      #cc314d,
+      #cc314d 20px,
+      white 20px,
+      white 40px
+    ) 10;
   }
 }
 
@@ -169,8 +181,6 @@ h2 {
   cursor: pointer;
 }
 
-
-
 .btn {
   @media (max-width: 375px) {
     width: 45px;
@@ -180,10 +190,9 @@ h2 {
 
 h1 {
   @media (max-width: 375px) {
-    margin:0;
+    margin: 0;
   }
 }
-
 
 .btn:hover {
   background-color: #e0e0e0;
@@ -245,7 +254,6 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-
 .modal--footer,
 .actions--wrapper {
   display: flex;
@@ -296,24 +304,24 @@ p {
 }
 
 .arrow {
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 60%;
-    height: 60%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60%;
+  height: 60%;
 }
 
 .arrow-up {
-	background-image: url('/icons/arrow-up.svg');
+  background-image: url("/icons/arrow-up.svg");
 }
 
 .arrow-down {
-	background-image: url('/icons/arrow-down.svg');
+  background-image: url("/icons/arrow-down.svg");
 }
 
 .arrow-right {
-	background-image: url('/icons/arrow-right.svg');
+  background-image: url("/icons/arrow-right.svg");
 }
 
 .arrow-left {
-	background-image: url('/icons/arrow-left.svg');
+  background-image: url("/icons/arrow-left.svg");
 }
