@@ -58,12 +58,13 @@ h2 {
   .game-canvas {
     border: 10px solid green;
     border-image: repeating-linear-gradient(
-      45deg,
-      #cc314d,
-      #cc314d 20px,
-      white 20px,
-      white 40px
-    ) 10;
+        45deg,
+        #cc314d,
+        #cc314d 20px,
+        white 20px,
+        white 40px
+      )
+      10;
   }
 }
 
@@ -107,10 +108,8 @@ h2 {
     width: 42vw;
     height: 42vw;
   }
-} */
-
-
-@media (max-width: 1024px) {
+}
+*/ @media (max-width: 1024px) {
   h1 {
     font-size: 24px;
   }
@@ -142,6 +141,34 @@ h2 {
     Arial, sans-serif;
 }
 
+.modal-inner {
+  display: flex;
+  flex-direction: column;
+  width: 530px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 12px 24px;
+  gap: 12px;
+}
+
+.modal-ol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0px 16px;
+}
+
+.futnote {
+  font-size: 12px;
+}
+
+.socials-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 18px;
+}
+
 .score {
   background-color: #fff;
   padding: 10px 20px;
@@ -163,6 +190,10 @@ h2 {
   @media (min-width: 1024px) {
     display: none;
   }
+}
+
+.btn--full {
+  width: 100% !important;
 }
 
 .btn {
@@ -322,4 +353,30 @@ p {
 
 .arrow-left {
   background-image: url("/icons/arrow-left.svg");
+}
+
+.social-icon {
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.instagram {
+  background-image: url("/icons/instagram.svg");
+}
+
+.twitter {
+  background-image: url("/icons/twitter.svg");
+}
+
+.facebook {
+  background-image: url("/icons/facebook.svg");
 }

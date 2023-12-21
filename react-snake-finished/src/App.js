@@ -13,6 +13,7 @@ import GameOverModal from "./GameOverModal";
 import ReactDOM from 'react-dom'
 import Snowfall from 'react-snowfall'
 import useAnimationFrame from './useAnimationFrame';
+import GameStartModal from "./GameStartModal";
 // import '@fortawesome/fontawesome-free/css/all.css';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [currentDirection, setCurrentDirection] = useState(38);
+  const [showStartGameModal, setShowStartGameModal] = useState(true);
 
   useInterval(() => gameLoop(), speed);
 
@@ -184,7 +186,8 @@ const App = () => {
       <div className="actions--wrapper">
         <button className="m-btn btn--outline score">Score: {score}</button>
         {gameOver && <GameOverModal score={score} startGame={startGame} />}
-        <button className="m-btn btn--primary" onClick={startGame}>Start Game</button>
+        {showStartGameModal && <GameStartModal onStart={() => setShowStartGameModal(false)} startGame={startGame}/>}
+        {/* <button className="m-btn btn--primary" onClick={startGame}>Start Game</button> */}
       </div>
     </div>
   );
