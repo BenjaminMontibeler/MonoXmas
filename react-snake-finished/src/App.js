@@ -162,7 +162,7 @@ const App = () => {
       <h1 style={{ color: '#ffffff' }}>Merry Christmas</h1>
       <Snowfall snowflakeCount={100} className="canvas--snow" />
       <canvas
-        className="game-canvas"
+        className="game-canvas canvas--snow"
         ref={canvasRef}
         width={`${CANVAS_SIZE[0]}px`}
         height={`${CANVAS_SIZE[1]}px`}

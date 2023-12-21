@@ -1,6 +1,8 @@
 // GameOverModal.js
 import React,  { useState } from "react";
 import "./css/style.css";
+import { BsTwitterX } from "react-icons/bs";
+
 
 const GameStartModal = ({ startGame }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -39,12 +41,15 @@ const GameStartModal = ({ startGame }) => {
                     </li>
                 </ol>
                 <span className="futnote">* Santa is shipping only to Croatia!</span>
+                <hr />
 
-                <div className="socials-wrapper">
-                    <div className="flex"><i className="social-icon twitter"/>@mono.software</div>
-                    <div className="flex"><i className="social-icon instagram"/>@mono.software</div>
-                    <div className="flex"><i className="social-icon facebook"/>@mono.software</div>
-                </div>
+
+                  <div class="socials-wrapper">
+                  <div class="flex"><BsTwitterX /><span>@mono.software</span></div>
+                  <div class="flex"><i class="social-icon instagram"></i><span>@mono.software</span></div>
+                  <div class="flex"><i class="social-icon facebook"></i><span>@mono.software</span></div>
+                  </div>
+
 
                 <button className="m-btn btn--primary btn--full" onClick={handleButton}>
                     Play!

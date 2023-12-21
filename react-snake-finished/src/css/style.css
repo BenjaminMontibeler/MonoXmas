@@ -1,8 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: National2, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica,
     Arial, sans-serif;
@@ -12,6 +10,11 @@ body {
   background-position: top;
   background-repeat: repeat-x;
   overflow: hidden;
+}
+
+hr {
+  border-top: 1px solid black;
+  width: 100%;
 }
 
 h2 {
@@ -34,8 +37,6 @@ h2 {
   background-position: center center;
   background-size: 200px;
   display: flex;
-  width: 29vw;
-  height: 29vw;
   border: 20px solid green;
   border-image: repeating-linear-gradient(
       45deg,
@@ -47,14 +48,7 @@ h2 {
     20;
 }
 
-@media (max-width: 580px) {
-  .game-canvas {
-    width: 75vw;
-    height: 75vw;
-  }
-}
-
-@media (min-width: 430px) and (max-width: 930px) {
+@media (max-width: 930px) {
   .game-canvas {
     border: 10px solid green;
     border-image: repeating-linear-gradient(
@@ -68,48 +62,27 @@ h2 {
   }
 }
 
-@media (min-width: 581px) and (max-width: 650px) {
+.game-canvas {
+  width: 100%;
+  max-width: 85vw;
+  height: calc(100vh - 260px);
+
+}
+
+@media (max-width: 1023px) {
   .game-canvas {
-    width: 65vw;
-    height: 65vw;
+    max-width: 50vw;
+    height: calc(100vh - 445px)
   }
 }
 
-@media (min-width: 651px) and (max-width: 755px) {
-  .game-canvas {
-    width: 57vw;
-    height: 57vw;
-  }
+.canvas--snow {
+  width: 85vw;
+  max-width: 600px;
+  height: 100%;
 }
 
-@media (min-width: 751px) and (max-width: 1024px) {
-  .game-canvas {
-    width: 42vw;
-    height: 42vw;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .game-canvas {
-    width: 50vw;
-    height: 50vw;
-  }
-}
-
-@media (min-width: 1201px) and (max-width: 1400px) {
-  .game-canvas {
-    width: 45vw;
-    height: 45vw;
-  }
-}
-
-@media (min-width: 1401px) and (max-width: 1600px) {
-  .game-canvas {
-    width: 42vw;
-    height: 42vw;
-  }
-}
-*/ @media (max-width: 1024px) {
+@media (max-width: 1024px) {
   h1 {
     font-size: 24px;
   }
@@ -167,6 +140,7 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   gap: 18px;
+  margin-bottom: 12px;
 }
 
 .score {
@@ -286,6 +260,7 @@ h1 {
 .modal--footer,
 .actions--wrapper {
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -379,4 +354,8 @@ p {
 
 .facebook {
   background-image: url("/icons/facebook.svg");
+}
+
+.modal-inner {
+  max-width: 70vw;
 }
