@@ -5,11 +5,10 @@ body {
     Arial, sans-serif;
   transition: all 0.25s cubic-bezier(0.65, 0, 0.17, 0.98);
   background-color: #1e2633;
-  background-image: url("/icons/tree.svg");
-  background-size: 220px;
-  background-position: center;
-  background-repeat: repeat;
-  /* overflow: hidden; */
+  background-size: 2020px;
+  background-position: top;
+  background-repeat: repeat-x;
+  overflow: hidden;
 }
 
 h2 {
@@ -41,10 +40,65 @@ h2 {
     20;
 }
 
-@media (max-width: 1024px) {
+
+@media (max-width: 580px) {
   .game-canvas {
-    width: 76vw;
-    height: 76vw;
+    width: 75vw;
+    height: 75vw;
+  }
+}
+
+@media (min-width: 581px) and (max-width: 650px) {
+  .game-canvas {
+    width: 65vw;
+    height: 65vw;
+  }
+}
+
+@media (min-width: 651px) and (max-width: 755px) {
+  .game-canvas {
+    width: 57vw;
+    height: 57vw;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1024px) {
+  .game-canvas {
+    width: 42vw;
+    height: 42vw;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .game-canvas {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .game-canvas {
+    width: 45vw;
+    height: 45vw;
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .game-canvas {
+    width: 42vw;
+    height: 42vw;
+  }
+}
+
+@media (max-width: 580px) {
+  h1 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 581px) and (max-width: 1024px) {
+  h1 {
+    font-size: 24px;
   }
 }
 

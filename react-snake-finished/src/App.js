@@ -118,6 +118,7 @@ const App = () => {
     setScore(0);
     canvasRef.current.focus();
   };
+  
 
   useEffect(() => {
     const context = canvasRef.current.getContext("2d");
@@ -140,6 +141,9 @@ const App = () => {
     appleImg.src = "/icons/gift.svg";
     context.drawImage(appleImg, appleX, appleY, 1, 1);
   }, [snake, apple, gameOver]);
+
+
+  
 
   return (
     <div className="container" role="button" tabIndex="0" onKeyDown={e => moveSnake(e)}>
