@@ -17,7 +17,7 @@ const GameStartModal = ({ startGame }) => {
       <div className="modal">
         <div className="modal-content">
             <div className="modal-inner">
-                <h2>Sleigh Gift Snake Game</h2>
+                <h2>Help Santa to get his gifts back <span role="img">🎁</span></h2>
                 <ol className="modal-ol">
                     <li>
                         The object of the game is to collect as many gifts as possible without hitting the edge of the screen
