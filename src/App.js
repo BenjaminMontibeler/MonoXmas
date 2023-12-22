@@ -40,23 +40,23 @@ const App = () => {
     }
     if(currentDirection === 37 ) {
       if(keyCode === currentDirection+2) {
-        return; 
-      } 
+        return;
+      }
     }
     if(currentDirection === 38 ) {
       if(keyCode === currentDirection+2) {
-        return; 
-      } 
+        return;
+      }
     }
     if(currentDirection === 39) {
       if(keyCode === currentDirection-2) {
         return;
-      } 
+      }
     }
     if(currentDirection === 40) {
       if(keyCode === currentDirection-2) {
         return;
-      } 
+      }
     }
     setCurrentDirection(keyCode);
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
@@ -129,7 +129,7 @@ const App = () => {
     setScore(0);
     canvasRef.current.focus();
   };
-  
+
   useEffect(() => {
   const context = canvasRef.current.getContext("2d");
   context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
@@ -137,22 +137,22 @@ const App = () => {
 
   // Draw snake body
   const bodyImg = new Image();
-  bodyImg.src = "/icons/gift.svg";
+  bodyImg.src = "/icons/giftbox.png";
   snake.slice(1).forEach(([x, y]) => context.drawImage(bodyImg, x, y, 1, 1));
 
   // Draw apple
   const [appleX, appleY] = apple;
   const appleImg = new Image();
-  appleImg.src = "/icons/gift.svg";
+  appleImg.src = "/icons/giftbox.png";
   context.drawImage(appleImg, appleX, appleY, 1, 1);
 
   // Draw snake head with rotation
   const [headX, headY] = snake[0];
   const headImg = new Image();
-  headImg.src = "/icons/sleigh.svg";
+  headImg.src = "/icons/santa-claus.png";
   context.save(); // Save the current transformation state
   context.translate(headX + 0.5, headY + 0.5); // Translate to the center of the head
-  context.rotate((rotationAngle * Math.PI) / 180); // Apply rotation
+  // context.rotate((rotationAngle * Math.PI) / 180); // Apply rotation
   context.drawImage(headImg, -0.5, -0.5, 1, 1); // Draw the rotated head
   context.restore(); // Restore the original transformation state
 }, [snake, apple, gameOver, rotationAngle]);

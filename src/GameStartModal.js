@@ -33,11 +33,11 @@ const GameStartModal = ({ startGame }) => {
                     </li>
 
                     <li>
-                        Three best sent scores will get our bag of goodies.
+                        The best sent score will get our bag of goodies.
                     </li>
 
                     <li>
-                        have a holly jolly fun from Mono!
+                        Have a holly jolly fun from Mono!
                     </li>
                 </ol>
                 <span className="futnote">* Santa is shipping only to Croatia!</span>
@@ -45,9 +45,9 @@ const GameStartModal = ({ startGame }) => {
 
 
                   <div class="socials-wrapper">
-                  <div class="flex"><BsTwitterX /><span>@mono.software</span></div>
-                  <div class="flex"><i class="social-icon instagram"></i><span>@mono.software</span></div>
-                  <div class="flex"><i class="social-icon facebook"></i><span>@mono.software</span></div>
+              <div class="flex"><i class="social-icon facebook"></i><span><a href="https://www.facebook.com/mono.software">@mono.software</a></span></div>
+              <div class="flex"><i class="social-icon instagram"></i><span><a href="https://www.instagram.com/mono.software/">@mono.software</a></span></div>
+              <div class="flex"><BsTwitterX /><span><a href="https://x.com/monosoftware?s=20">@mono.software</a></span></div>
                   </div>
 
 
