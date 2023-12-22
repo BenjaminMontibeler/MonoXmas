@@ -184,7 +184,7 @@ const App = () => {
       {!modalOpen ? (
         <div>
           <div id="santa-gameover">
-            <div>
+            <div className="game-wrapper">
               <Snowfall snowflakeCount={100} className="canvas--snow" />
               <canvas
                 className="game-canvas canvas--snow"
