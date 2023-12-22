@@ -3,11 +3,12 @@ import React,  { useState } from "react";
 import "./css/style.css";
 import { BsTwitterX } from "react-icons/bs";
 
-const GameOverModal = ({ score, startGame }) => {
+const GameOverModal = ({ score, startGame, handleClose }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const closeModal = () => {
     setIsVisible(false);
+    handleClose(true)
   };
 
   const handlePlayAgain = () => {
@@ -29,6 +30,9 @@ const GameOverModal = ({ score, startGame }) => {
           <div className="modal--footer">
             <button className="m-btn btn--primary" onClick={handlePlayAgain}>
               Play Again
+            </button>
+            <button className="m-btn btn--outline" onClick={closeModal}>
+              Close to take screenshot
             </button>
           </div>
         </div>
