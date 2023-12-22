@@ -54,10 +54,10 @@ const GameStartModal = ({ startGame }) => {
                 </div>
 
 
-                <button className="m-btn btn--primary btn--full" onClick={handleButton}>
-                    Play!
-                </button>
             </div>
+            <button className="m-btn btn--primary btn--full" onClick={handleButton}>
+                Play!
+            </button>
         </div>
       </div>
     )
