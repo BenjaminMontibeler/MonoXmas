@@ -118,9 +118,10 @@ a {
   margin: 0px 20px;
   border-radius: 8px;
   text-align: center;
+  width: 200px;
 
-  @media(max-width:575px) {
-    width: 200px;
+  @media (min-width: 600px) {
+    width: unset;
   }
 }
 
@@ -147,15 +148,15 @@ a {
 
 .socials-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 18px;
   margin-bottom: 12px;
 
-  @media(max-width:575px) {
-    justify-content: center;
-    flex-direction: column;
+  @media (min-width: 600px) {
+    justify-content: space-between;
+    flex-direction: row;
   }
 }
 
@@ -276,6 +277,7 @@ p {
 
 .modal--footer {
   margin-top: 20px;
+  margin-bottom: 15x;
   width: 90%;
 }
 
