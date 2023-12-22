@@ -44,11 +44,11 @@ const GameStartModal = ({ startGame }) => {
                 <hr />
 
 
-                  <div class="socials-wrapper">
-              <div class="flex"><i class="social-icon facebook"></i><span><a href="https://www.facebook.com/mono.software">@mono.software</a></span></div>
-              <div class="flex"><i class="social-icon instagram"></i><span><a href="https://www.instagram.com/mono.software/">@mono.software</a></span></div>
-              <div class="flex"><BsTwitterX /><span><a href="https://x.com/monosoftware?s=20">@mono.software</a></span></div>
-                  </div>
+                <div class="socials-wrapper">
+                  <div class="flex"><i class="social-icon facebook"></i><span><a href="https://www.facebook.com/mono.software">@mono.software</a></span></div>
+                  <div class="flex"><i class="social-icon instagram"></i><span><a href="https://www.instagram.com/mono.software/">@mono.software</a></span></div>
+                  <div class="flex"><BsTwitterX /><span><a href="https://x.com/monosoftware?s=20">@mono.software</a></span></div>
+                </div>
 
 
                 <button className="m-btn btn--primary btn--full" onClick={handleButton}>

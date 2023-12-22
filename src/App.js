@@ -187,7 +187,6 @@ const App = () => {
         <button className="m-btn btn--outline score">Score: {score}</button>
         {gameOver && <GameOverModal score={score} startGame={startGame} />}
         {showStartGameModal && <GameStartModal onStart={() => setShowStartGameModal(false)} startGame={startGame}/>}
-        {/* <button className="m-btn btn--primary" onClick={startGame}>Start Game</button> */}
       </div>
     </div>
   );
