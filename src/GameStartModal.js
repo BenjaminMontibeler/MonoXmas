@@ -40,7 +40,10 @@ const GameStartModal = ({ startGame }) => {
                         Have a holly jolly fun from Mono!
                     </li>
                 </ol>
-                <span className="futnote">* Santa is shipping only to Croatia!</span>
+                <div className="futnote">
+                  <p>* Santa is shipping only to Croatia!</p>
+                  <p>* If there are multiple players with the same highest score, we will use a random online tool to select a winner.</p>
+                </div>
                 <hr />
 
 

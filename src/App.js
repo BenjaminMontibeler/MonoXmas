@@ -35,6 +35,7 @@ const App = () => {
   };
 
   const moveSnake = ({ keyCode }) => {
+    console.log(keyCode);
     if(!(keyCode >= 37 && keyCode <= 40)) {
       return;
     }
