@@ -14,6 +14,13 @@ import Snowfall from "react-snowfall";
 import GameStartModal from "./GameStartModal";
 import html2canvas from "html2canvas";
 
+const headImg = new Image();
+headImg.src = "/icons/santa-claus.png";
+const appleImg = new Image();
+appleImg.src = "/icons/giftbox.png";
+const bodyImg = new Image();
+bodyImg.src = "/icons/giftbox.png";
+
 const App = () => {
   const canvasRef = useRef();
   const [snake, setSnake] = useState(SNAKE_START);
@@ -26,8 +33,13 @@ const App = () => {
   const [showStartGameModal, setShowStartGameModal] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [screenshot, setScreenshot] = useState(null);
+  const [currentSnakePosition, setCurrentSnakePosition] = useState(SNAKE_START);
 
-  useInterval(() => gameLoop(), speed);
+  useInterval(() => {
+    if (!gameOver) {
+    gameLoop();
+    }
+  }, speed);
 
   const endGame = () => {
     setSpeed(null);
@@ -36,6 +48,9 @@ const App = () => {
   };
 
   const moveSnake = ({ keyCode }) => {
+    if(currentSnakePosition === snake) {
+      return;
+    }
     if (!(keyCode >= 37 && keyCode <= 40)) {
       return;
     }
@@ -60,6 +75,7 @@ const App = () => {
       }
     }
     setCurrentDirection(keyCode);
+    setCurrentSnakePosition(snake);
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
   }
 
@@ -140,6 +156,8 @@ const App = () => {
     setDir([0, -1]);
     setSpeed(SPEED);
     setGameOver(false);
+    setCurrentDirection(38);
+    setCurrentSnakePosition(SNAKE_START);
     setScore(0);
     canvasRef.current.focus();
   };
@@ -150,22 +168,18 @@ const App = () => {
     context.clearRect(0, 0, CANVAS_SIZE[0], CANVAS_SIZE[1]);
 
     // Draw snake body
-    const bodyImg = new Image();
-    bodyImg.src = "/icons/giftbox.png";
+
     snake.slice(1).forEach(([x, y]) =>
       context.drawImage(bodyImg, x, y, 1, 1)
     );
 
     // Draw apple
     const [appleX, appleY] = apple;
-    const appleImg = new Image();
-    appleImg.src = "/icons/giftbox.png";
+
     context.drawImage(appleImg, appleX, appleY, 1, 1);
 
     // Draw snake head with rotation
     const [headX, headY] = snake[0];
-    const headImg = new Image();
-    headImg.src = "/icons/santa-claus.png";
     context.save();
     context.translate(headX + 0.5, headY + 0.5);
     context.drawImage(headImg, -0.5, -0.5, 1, 1);
