@@ -182,8 +182,8 @@ a {
   align-items: center;
 }
 
-.c-btn {
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) {
+  .c-btn {
     display: none;
   }
 }
@@ -299,6 +299,13 @@ p {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .modal--footer {
+    display: flex;
+    flex-direction: column
+  }
+}
+
 .m-btn {
   padding: 15px 20px;
   border-radius: 5px;
@@ -306,6 +313,7 @@ p {
 }
 
 .btn--primary {
+  width: 100%;
   background-color: #cc314d;
   color: #fff;
   border: none;
@@ -315,8 +323,7 @@ p {
   font-family: Quicksand, sans-serif;
   font-size: 1em;
 
-transition: all 250ms cubic-bezier(0.65, 0, 0.17, 0.98);
-;
+  transition: all 250ms cubic-bezier(0.65, 0, 0.17, 0.98);
 }
 
 
@@ -325,6 +332,7 @@ transition: all 250ms cubic-bezier(0.65, 0, 0.17, 0.98);
 }
 
 .btn--outline {
+  width: 100%;
   background-color: #fff;
   border: 2px solid #cc314d;
   color: #cc314d;

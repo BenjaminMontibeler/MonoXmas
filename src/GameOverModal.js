@@ -32,7 +32,7 @@ const GameOverModal = ({ score, startGame, handleClose }) => {
               Play Again
             </button>
             <button className="m-btn btn--outline" onClick={closeModal}>
-              Close to take screenshot
+              Take screenshot
             </button>
           </div>
         </div>
